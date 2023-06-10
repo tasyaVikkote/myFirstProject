@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/result.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="result">
+  <div class="container">
+    <div class="result__wrap">
+      <div class="result__content">
+        <div class="result__title">Успешно!</div>
+
+        <div class="result__value">Площадь: {{ elem.square }}</div>
+        <div class="result__value">Периметр: {{ elem.perimeter }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

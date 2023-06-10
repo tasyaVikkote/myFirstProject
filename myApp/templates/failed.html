@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/app.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="app">
+  <div class="container">
+    <div class="app__wrap">
+      <div class="app__content">
+        <div class="app__title">Произошла ошибка</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

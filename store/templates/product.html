@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="product">
+  <div class="container">
+    <div class="product__wrap">
+      <div class="product__image">
+        <img src="{{product.image}}" alt="{{product.name}}">
+
+        <div class="product__category">
+          {{ product.category.name }}
+        </div>
+      </div>
+
+      <div class="product__title">
+        {{ product.name }}
+      </div>
+
+      <div class="product__totalPrice">
+        <div class="product__price">{{ product.price }}</div>
+        <div class="product__perOne">₽/шт</div>
+
+        <div class="product__oldPrice">{{ product.oldPrice }} ₽</div>
+      </div>
+
+      <div class="product__description">
+        <span>Описание: </span>
+        {{ product.description }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comments">
+  <div class="container">
+    <div class="comments__wrap" id='comments'>
+      <div class="comments__title">Комментарии:</div>
+
+      <form action="" id="createCommentForm">
+        <label>
+          <span>Ваш псевдоним</span>
+          <input type="text" id="userName">
+        </label>
+        <label>
+          <span>Комментарий</span>
+          <textarea id="commentText" cols="30" rows="5"></textarea>
+        </label>
+
+        <button id="sendComment">Отправить</button>
+      </form>
+
+      {% for comment in comments %}
+
+      <div class="comment">
+        <div class="comment__avatar">
+          <img src="https://med-standart.org/upload/iblock/3d7/m59w4orjj6j02y1gw1xfj6pzthmw2ggx.jpg" alt="avatar">
+        </div>
+
+        <div class="comment__content">
+          <div class="comment__userName">
+            {{ comment.userName }}
+          </div>
+
+          <div class="comment__text">
+            {{ comment.text }}
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="mb50"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/product.js' %}"></script>
+<script>
+  $('#sendComment').click(function (event) {
+    event.preventDefault()
+
+    addComment("{{ csrf_token }}", '{{product.id}}', "{% url 'createComment' %}")
+  })
+</script>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="banner">
+  <div class="container">
+    <div class="banner__wrap">
+      <img src="{% static 'img/banner.webp' %}" />
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+    <div class="main__wrapper">
+      <div class="categories">
+        <div data-category-id="0" class="category category-active">
+          Все
+        </div>
+
+        {% for category in categories %}
+
+        <div class="category" data-category-id="{{category.id}}">
+          {{ category.name }}
+        </div>
+
+        {% endfor %}
+      </div>
+
+      <div class="products" id="products">
+        {% if products %}
+          {% for product in products %}
+
+          <div class="product">
+            <div class="product__wrap">
+              <div class="product__image">
+                <img src="{{product.image}}" alt="{{product.name}}">
+
+                <div class="product__category">
+                  {{ product.category.name }}
+                </div>
+              </div>
+
+              <div class="product__title">
+                <a href="{% url 'product' id=product.id %}">{{ product.name }}</a>
+              </div>
+
+              <div class="product__totalPrice">
+                <div class="product__price">{{ product.price }}</div>
+                <div class="product__perOne">₽/шт</div>
+
+                <div class="product__oldPrice">{{ product.oldPrice }} ₽</div>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+
+        {% else %}
+          <div class="products__isEmpty">
+            Пока товаров нет(
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/index.js' %}"></script>
+<script>
+  $('.category').click(function (event) {
+    let id = this.getAttribute('data-category-id')
+    const productEndpoint = "{% url 'product' id=0 %}"
+
+    updateProducts("{{ csrf_token }}", id, "{% url 'getProductsByCategory' %}", productEndpoint)
+  })
+</script>
+{% endblock %}

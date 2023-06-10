@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Строительный</title>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="header__wrap nav">
+        <a href="{% url 'index' %}" class="logo">Строительный</a>
+        <div class="nav__content">
+          <a href="{% url 'contacts' %}" class="nav__el">Контакты</a>
+          <a href="{% url 'about' %}" class="nav__el">О нас</a>
+          <a href="{% url 'index' %}" class="nav__el">Приложение</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  {% block main %}{% endblock %}
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrap">
+        <a href="{% url 'index' %}" class="footer__logo">Строительный</a>
+        <div class="footer__content">
+          <a href="{% url 'contacts' %}" class="nav__el">Контакты</a>
+        <a href="{% url 'about' %}" class="nav__el">О нас</a>
+        <a href="{% url 'index' %}" class="nav__el">Приложение</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="{% static 'js/base.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+
+</html>

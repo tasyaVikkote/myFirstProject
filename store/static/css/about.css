@@ -1,0 +1,36 @@
+/* .about {} */
+
+/* .about__wrap {} */
+
+.about__images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.about__content {
+  margin-top: 50px;
+}
+
+.about__images img {
+  flex: 1 1 0;
+  height: 350px;
+  margin: 0 25px;
+}
+
+.about__title {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.about__text {
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  padding: 0 40px;
+}

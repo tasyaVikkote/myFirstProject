@@ -1,0 +1,140 @@
+.main__wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.categories {
+  width: 30%;
+  min-width: 300px;
+  min-height: 50vh;
+}
+
+.category {
+  font-size: 18px;
+  padding: 5px 5px 5px 15px;
+  margin: 5px 30px 5px 5px;
+}
+
+.category:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  /* border-radius: 10px; */
+}
+
+.category-active {
+  background-color: rgba(0, 0, 0, 0.2);
+  /* border-radius: 10px; */
+}
+
+.category-active:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.products {
+  display: flex;
+  align-self: start;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.products__isEmpty {
+  padding: 20px;
+  width: 75%;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.product {
+  width: 31%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  height: 360px;
+}
+
+.product__wrap {
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px 0px;
+}
+
+.product__image {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product__image img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
+  border-radius: 20px 0px 20px 0px;
+}
+
+.product__title {
+  font-size: 18px;
+  margin: 10px 0px 10px 0px;
+}
+
+.product__title a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.product__category {
+  background-color: yellowgreen;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  position: absolute;
+  z-index: 10;
+  left: 10px;
+  bottom: 10px;
+  border-radius: 10px;
+}
+
+.product__totalPrice {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  color: #FFFFFF;
+}
+
+.product__price {
+  background-color: yellowgreen;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 3px;
+}
+
+.product__perOne {
+  background-color: yellowgreen;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 3px;
+}
+
+.product__oldPrice {
+  color: #000000;
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 2.5px;
+}
+
+.product__oldPrice::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 110%;
+  height: 1px;
+  left: -5%;
+  top: 50%;
+  background-color: red;  
+}

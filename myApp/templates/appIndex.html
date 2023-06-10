@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/app.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="app">
+  <div class="container">
+    <div class="app__wrap">
+      <div class="app__image">
+        <img
+          src="https://newspasky.ru/800/600/https/verchnik.by/wp-content/uploads/2015/04/%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B9-%D0%B2%D0%B8%D0%B4-2.jpg"
+          alt="app">
+      </div>
+
+      <div class="app__content">
+        <div class="app__title">Посчитай площадь и периметр жилой зоны</div>
+
+        <div class="app__text">
+          Исходя из параметров площади и периметра вы сможете определить количество материала, требуемого для ремонта
+          или обновления вашего строения. Хорошей работы!
+        </div>
+
+        <form method="POST" class="form">{% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="formSubmit">Посчитать</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="about">
+  <div class="container">
+    <div class="about__wrap">
+      <div class="about__images">
+        <img src="{% static 'img/about1.jpg' %}" alt="about1">
+        <img src="{% static 'img/about2.jpg' %}" alt="about2">
+      </div>
+
+      <div class="about__content">
+        <div class="about__title">О нас</div>
+
+        <div class="about__text">
+          Мы считаем несколько пунктов одними из самых важных, что должны присутствовать на нашем сайте по продаже
+          строительных товаров. Так как клиентоориентированность для нас стоит на первом месте, мы хотим представлять
+          для
+          покупателей актуальный ассортимент, в котором они будут быстро ориентироваться. И второе, но наверняка не
+          последнее в будущем, для нас важно создать простую схему заказа и оплаты товаров, с возможностью рассчитывания
+          доставки за МКАД или в другие города.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

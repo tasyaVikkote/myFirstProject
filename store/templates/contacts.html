@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="contacts">
+  <div class="container">
+    <div class="contacts__wrap">
+      <div class="contacts__image">
+        <img src="https://static.tildacdn.com/tild3735-6166-4062-b635-653834316633/3.jpg" alt="adresses">
+      </div>
+
+      <div class="content">
+        <div class="authors">
+          <div class="author">
+            <img src="{% static 'img/author.jpg' %}" alt="author">
+            <div class="author__content">
+              <div class="author__title">Яшина Анастасия Олеговна</div>
+              <div class="author__about">
+                Девочка, хорошистка с синдромом отличника, 3 панические атаки в год, искренне верит в чудо
+              </div>
+              <a href="https://vk.com/owlvic" class="author__vk">Мой Вконтакте</a>
+            </div>
+          </div>
+        </div>
+        <div class="addresses">
+          <div class="addresses__title">Наши адреса</div>
+
+          <div class="addresses__content">
+            {% if addresses %}
+            {% for address in addresses %}
+
+            <div class="address">
+              г. {{ address.city }}, ул. {{address.street}}, дом {{address.house}}
+            </div>
+
+            {% endfor %}
+            {% else %}
+            <div class="addresses__isEmpty">
+              Вернитесь позже
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

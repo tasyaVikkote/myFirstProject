@@ -1,0 +1,69 @@
+.app__image {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.app__image img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-25%) translateX(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
+  border-radius: 20px 0px 20px 0px;
+}
+
+.app__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.app__title {
+  display: block;
+  width: 100%;
+  margin: 40px 0 20px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.app__text {
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  max-width: 50%;
+}
+
+.formInput {
+  padding: 10px;
+  border: 1 solid gray;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+
+.formSubmit {
+  background-color: greenyellow;
+  padding: 10px 50px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  font-weight: 700;
+  margin: 20px auto 0;
+}
+
+.form p {
+  margin: 5px;
+}
